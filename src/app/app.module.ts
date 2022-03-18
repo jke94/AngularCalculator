@@ -6,11 +6,20 @@ import { AppComponent } from './app.component';
 import { MinicalculatorComponent } from './components/minicalculator/minicalculator.component';
 
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './components/menu/menu.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MainComponent } from './components/main/main.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MinicalculatorComponent
+    MinicalculatorComponent,
+    MenuComponent,
+    FooterComponent,
+    MainComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
