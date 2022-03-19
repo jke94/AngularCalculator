@@ -10,6 +10,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { InodesCalculatorComponent } from './components/inodes-calculator/inodes-calculator.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
     MenuComponent,
     FooterComponent,
     MainComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    InodesCalculatorComponent
   ],
   imports: [
     BrowserModule,
