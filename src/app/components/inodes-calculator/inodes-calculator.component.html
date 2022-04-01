@@ -81,5 +81,31 @@
     <hr>
     <div class="container text-center p-3">
         <h1 class="display-6">Number of total data blocks: {{nDataBlock}}</h1>
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Inode type</th>
+                <th scope="col">Number of blocks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Direct pointers</td>
+                <td>{{nDataBlockDirect}}</td>
+              </tr>
+              <tr>
+                <td>Simple indirect pointers</td>
+                <td>{{nDataBlockSimpleIndirect}}</td>
+              </tr>
+              <tr>
+                <td>Double indirect pointers</td>
+                <td>{{nDataBlockDoubleIndirect}}</td>
+              </tr>
+              <tr>
+                <td>Triple indirect pointers</td>
+                <td>{{nDataBlockTripleIndirect}}</td>
+              </tr>
+            </tbody>
+          </table>
     </div>
 </div>

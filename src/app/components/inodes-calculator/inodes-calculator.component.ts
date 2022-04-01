@@ -17,6 +17,11 @@ export class InodesCalculatorComponent implements OnInit {
   nDirByBlock : number = 0;
   nMaxFileSize : number = 0;
   nDataBlock : number = 0;
+
+  nDataBlockDirect : number= 0;
+  nDataBlockSimpleIndirect : number= 0;
+  nDataBlockDoubleIndirect : number= 0;
+  nDataBlockTripleIndirect : number= 0;
   
 
   constructor() { }
@@ -37,6 +42,13 @@ export class InodesCalculatorComponent implements OnInit {
                       (this.nIndirectSimplePointers * Math.pow(this.nDirByBlock, 1)) + 
                       (this.nIndirectDoublePointers * Math.pow(this.nDirByBlock, 2)) +
                       (this.nIndirectTriplePointers * Math.pow(this.nDirByBlock, 3));
+
+
+    this.nDataBlockDirect = (this.nDirectPointers * Math.pow(this.nDirByBlock, 0))
+    this.nDataBlockSimpleIndirect = (this.nIndirectSimplePointers * Math.pow(this.nDirByBlock, 1));
+    this.nDataBlockDoubleIndirect = (this.nIndirectDoublePointers * Math.pow(this.nDirByBlock, 2));
+    this.nDataBlockTripleIndirect = (this.nIndirectTriplePointers * Math.pow(this.nDirByBlock, 3));
+    
   }
   Reset() : void
   {
@@ -50,5 +62,9 @@ export class InodesCalculatorComponent implements OnInit {
     this.nDirByBlock = 0
     this.nMaxFileSize = 0
     this.nDataBlock = 0
+    this.nDataBlockDirect = 0;
+    this.nDataBlockSimpleIndirect = 0;
+    this.nDataBlockDoubleIndirect = 0;
+    this.nDataBlockTripleIndirect = 0;
   }
 }
