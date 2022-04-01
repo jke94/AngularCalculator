@@ -22,7 +22,8 @@ export class InodesCalculatorComponent implements OnInit {
   nDataBlockSimpleIndirect : number= 0;
   nDataBlockDoubleIndirect : number= 0;
   nDataBlockTripleIndirect : number= 0;
-  
+
+  nDirectionBlocks : number = 0;
 
   constructor() { }
 
@@ -49,6 +50,10 @@ export class InodesCalculatorComponent implements OnInit {
     this.nDataBlockDoubleIndirect = (this.nIndirectDoublePointers * Math.pow(this.nDirByBlock, 2));
     this.nDataBlockTripleIndirect = (this.nIndirectTriplePointers * Math.pow(this.nDirByBlock, 3));
     
+    this.nDirectionBlocks = (this.nIndirectSimplePointers * Math.pow(this.nDirByBlock, 0)) +
+                            (this.nIndirectDoublePointers * Math.pow(this.nDirByBlock, 1)) +
+                            (this.nIndirectTriplePointers * Math.pow(this.nDirByBlock, 2));
+
   }
   Reset() : void
   {

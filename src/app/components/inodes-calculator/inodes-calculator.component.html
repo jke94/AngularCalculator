@@ -5,7 +5,7 @@
 <div class="container text-center p-1">
     <div class="row p-1">
         <div class="col col-example p-1">
-            <label>File Size (MBytes)</label>  
+            <label>File Size (MBytes)</label>
         </div>
         <div class="col col-example p-1">
             <input class="form-control m-10" type="number" min="0" [(ngModel)]="fileSize">
@@ -21,7 +21,7 @@
         </div>
 
         <div class="w-100"></div>
- 
+
         <div class="col col-example p-1">
             <label>Direction Size (bytes)</label>
         </div>
@@ -79,33 +79,44 @@
         <h1 class="display-6">Maximun file size: {{nMaxFileSize}} kbytes</h1>
     </div>
     <hr>
-    <div class="container text-center p-3">
+    <div class="row">
+        <h1 class="display-6">Number of total direction blocks: {{nDirectionBlocks}}</h1>
+    </div>
+    <hr>
+    <div class="row">
         <h1 class="display-6">Number of total data blocks: {{nDataBlock}}</h1>
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">Inode type</th>
-                <th scope="col">Number of blocks</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Direct pointers</td>
-                <td>{{nDataBlockDirect}}</td>
-              </tr>
-              <tr>
-                <td>Simple indirect pointers</td>
-                <td>{{nDataBlockSimpleIndirect}}</td>
-              </tr>
-              <tr>
-                <td>Double indirect pointers</td>
-                <td>{{nDataBlockDoubleIndirect}}</td>
-              </tr>
-              <tr>
-                <td>Triple indirect pointers</td>
-                <td>{{nDataBlockTripleIndirect}}</td>
-              </tr>
-            </tbody>
-          </table>
+    </div>
+    <div class="container text-center p-3">
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Inode type</th>
+                            <th scope="col">Number of blocks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Direct pointers</td>
+                            <td>{{nDataBlockDirect}}</td>
+                        </tr>
+                        <tr>
+                            <td>Simple indirect pointers</td>
+                            <td>{{nDataBlockSimpleIndirect}}</td>
+                        </tr>
+                        <tr>
+                            <td>Double indirect pointers</td>
+                            <td>{{nDataBlockDoubleIndirect}}</td>
+                        </tr>
+                        <tr>
+                            <td>Triple indirect pointers</td>
+                            <td>{{nDataBlockTripleIndirect}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
     </div>
 </div>
