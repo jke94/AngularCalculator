@@ -3,16 +3,25 @@
 </div>
 
 <div class="container text-center p-1">
-        <div class="row p-1">
+    <div class="row p-1">
         <div class="col col-example p-1">
-            <label>Cluster Size (kB)</label>
+            <label>File Size (MBytes)</label>  
+        </div>
+        <div class="col col-example p-1">
+            <input class="form-control m-10" type="number" min="0" [(ngModel)]="fileSize">
+        </div>
+    </div>
+    <hr>
+    <div class="row p-1">
+        <div class="col col-example p-1">
+            <label>Cluster Size or Block Size (kBytes)</label>
         </div>
         <div class="col col-example p-1">
             <input class="form-control m-10" type="number" min="0" [(ngModel)]="clusterSize">
         </div>
 
         <div class="w-100"></div>
-
+ 
         <div class="col col-example p-1">
             <label>Direction Size (bytes)</label>
         </div>
@@ -36,7 +45,7 @@
             <label>Number of simple indirect pointers</label>
         </div>
         <div class="col col-example p-1">
-            <input class="form-control" type="number" min="0" [(ngModel)]="nSimpleDirectPointers">
+            <input class="form-control" type="number" min="0" [(ngModel)]="nIndirectSimplePointers">
         </div>
 
         <div class="w-100"></div>
@@ -45,7 +54,7 @@
             <label>Number of double indirect pointers</label>
         </div>
         <div class="col col-example p-1">
-            <input class="form-control" type="number" min="0" [(ngModel)]="nDoubleDirectPointers">
+            <input class="form-control" type="number" min="0" [(ngModel)]="nIndirectDoublePointers">
         </div>
 
         <div class="w-100"></div>
@@ -54,7 +63,7 @@
             <label>Number of triple indirect pointers</label>
         </div>
         <div class="col col-example p-1">
-            <input class="form-control" type="number" min="0" [(ngModel)]="nTripleDirectPointers">
+            <input class="form-control" type="number" min="0" [(ngModel)]="nIndirectTriplePointers">
         </div>
     </div>
     <hr>
@@ -64,5 +73,13 @@
     </div>
     <div class="container text-center p-3">
         <h1 class="display-6">Number of addresses per block: {{nDirByBlock}}</h1>
+    </div>
+    <hr>
+    <div class="container text-center p-3">
+        <h1 class="display-6">Maximun file size: {{nMaxFileSize}} kbytes</h1>
+    </div>
+    <hr>
+    <div class="container text-center p-3">
+        <h1 class="display-6">Number of total data blocks: {{nDataBlock}}</h1>
     </div>
 </div>
