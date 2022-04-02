@@ -1,0 +1,17 @@
+hr.inodes {
+    border: 2px solid;
+}
+label.inodes{
+    font-size: 21px;
+    vertical-align: middle;
+}
+input.inodes{
+    font-size: 20px;
+    vertical-align: middle;
+}
+td.inodes{
+    font-size: 25px;
+}
+table, td, th{
+    border-width: 2px;
+}

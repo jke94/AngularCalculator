@@ -1,99 +1,121 @@
 <div class="container text-center p-1">
     <h1 class="display-5">Inodes Calculator</h1>
 </div>
-
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="container">
+                <div class="row p-1">
+                    <div class="col col-example p-1">
+                        <label class="inodes">File Size (MBytes)</label>
+                    </div>
+                    <div class="col col-example p-1">
+                        <input class="form-control m-10 inodes" type="number" min="0" [(ngModel)]="fileSize">
+                    </div>
+                </div>
+                <hr class="inodes">
+                <div class="row p-1">
+                    <div class="col col-example p-1">
+                        <label class="inodes">Cluster Size or Block Size (kBytes)</label>
+                    </div>
+                    <div class="col col-example p-1">
+                        <input class="form-control m-10 inodes" type="number" min="0" [(ngModel)]="clusterSize">
+                    </div>
+            
+                    <div class="w-100"></div>
+            
+                    <div class="col col-example p-1">
+                        <label class="inodes">Direction Size (bytes)</label>
+                    </div>
+                    <div class="col col-example p-1">
+                        <input class="form-control inodes" type="number" min="0" [(ngModel)]="directionSize">
+                    </div>
+                </div>
+                <hr class="inodes">
+                <div class="row p-1">
+            
+                    <div class="col col-example p-1">
+                        <label class="inodes">Number of direct pointers</label>
+                    </div>
+                    <div class="col col-example p-1">
+                        <input class="form-control m-10 inodes" type="number" min="0" [(ngModel)]="nDirectPointers">
+                    </div>
+            
+                    <div class="w-100"></div>
+            
+                    <div class="col col-example p-1">
+                        <label class="inodes">Number of simple indirect pointers</label>
+                    </div>
+                    <div class="col col-example p-1">
+                        <input class="form-control inodes" type="number" min="0" [(ngModel)]="nIndirectSimplePointers">
+                    </div>
+            
+                    <div class="w-100"></div>
+            
+                    <div class="col col-example p-1">
+                        <label class="inodes">Number of double indirect pointers</label>
+                    </div>
+                    <div class="col col-example p-1">
+                        <input class="form-control inodes" type="number" min="0" [(ngModel)]="nIndirectDoublePointers">
+                    </div>
+            
+                    <div class="w-100"></div>
+            
+                    <div class="col col-example p-1">
+                        <label class="inodes">Number of triple indirect pointers</label>
+                    </div>
+                    <div class="col col-example p-1">
+                        <input class="form-control inodes" type="number" min="0" [(ngModel)]="nIndirectTriplePointers">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="container">
+                <div class="row">
+                    <button class="btn btn-primary btn-lg m-2" (click)="Calculate()">Calculate</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary btn-lg m-2" (click)="Reset()">Reset</button>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
 <div class="container text-center p-1">
-    <div class="row p-1">
-        <div class="col col-example p-1">
-            <label>File Size (MBytes)</label>
-        </div>
-        <div class="col col-example p-1">
-            <input class="form-control m-10" type="number" min="0" [(ngModel)]="fileSize">
-        </div>
-    </div>
-    <hr>
-    <div class="row p-1">
-        <div class="col col-example p-1">
-            <label>Cluster Size or Block Size (kBytes)</label>
-        </div>
-        <div class="col col-example p-1">
-            <input class="form-control m-10" type="number" min="0" [(ngModel)]="clusterSize">
-        </div>
-
-        <div class="w-100"></div>
-
-        <div class="col col-example p-1">
-            <label>Direction Size (bytes)</label>
-        </div>
-        <div class="col col-example p-1">
-            <input class="form-control" type="number" min="0" [(ngModel)]="directionSize">
-        </div>
-    </div>
-    <hr>
-    <div class="row p-1">
-
-        <div class="col col-example p-1">
-            <label>Number of direct pointers</label>
-        </div>
-        <div class="col col-example p-1">
-            <input class="form-control m-10" type="number" min="0" [(ngModel)]="nDirectPointers">
-        </div>
-
-        <div class="w-100"></div>
-
-        <div class="col col-example p-1">
-            <label>Number of simple indirect pointers</label>
-        </div>
-        <div class="col col-example p-1">
-            <input class="form-control" type="number" min="0" [(ngModel)]="nIndirectSimplePointers">
-        </div>
-
-        <div class="w-100"></div>
-
-        <div class="col col-example p-1">
-            <label>Number of double indirect pointers</label>
-        </div>
-        <div class="col col-example p-1">
-            <input class="form-control" type="number" min="0" [(ngModel)]="nIndirectDoublePointers">
-        </div>
-
-        <div class="w-100"></div>
-
-        <div class="col col-example p-1">
-            <label>Number of triple indirect pointers</label>
-        </div>
-        <div class="col col-example p-1">
-            <input class="form-control" type="number" min="0" [(ngModel)]="nIndirectTriplePointers">
-        </div>
-    </div>
-    <hr>
-    <div>
-        <button class="btn btn-primary btn-lg m-2" (click)="Calculate()">Calculate</button>
-        <button class="btn btn-secondary btn-lg m-2" (click)="Reset()">Reset</button>
-    </div>
+    <h1 class="display-5">Summary of calculations</h1>
+</div>
+<div class="container text-center p-1">
     <div class="container text-center p-3">
-        <h1 class="display-6">Number of addresses per block: {{nDirByBlock}}</h1>
-    </div>
-    <hr>
-    <div class="container text-center p-3">
-        <h1 class="display-6">Maximun file size: {{nMaxFileSize}} kbytes</h1>
-    </div>
-    <hr>
-    <div class="row">
-        <h1 class="display-6">Number of total direction blocks: {{nDirectionBlocks}}</h1>
-    </div>
-    <hr>
-    <div class="row">
-        <h1 class="display-6">Number of total data blocks: {{nDataBlock}}</h1>
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered  ">
+                    <thead>
+                        <tr>
+                            <th scope="col">Number of addresses per block</th>
+                            <th scope="col">Maximun file size (KBytes)</th>
+                            <th scope="col">Number of total direction blocks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{nDirByBlock}}</td>
+                            <td>{{nMaxFileSize}}</td>
+                            <td>{{nDirectionBlocks}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <div class="container text-center p-3">
         <div class="row">
             <div class="col">
-                <table class="table table-bordered">
+                <table class="table table-bordered  ">
                     <thead>
                         <tr>
                             <th scope="col">Inode type</th>
-                            <th scope="col">Number of blocks</th>
+                            <th scope="col">Number of data blocks</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -113,10 +135,17 @@
                             <td>Triple indirect pointers</td>
                             <td>{{nDataBlockTripleIndirect}}</td>
                         </tr>
+                        <tr>
+                            <td class="inodes">
+                                <strong>
+                                    TOTAL
+                                </strong>
+                            </td>
+                            <td class="inodes">{{nDataBlock}}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 </div>
